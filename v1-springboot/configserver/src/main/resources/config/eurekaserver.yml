@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false #by default fetchRegistry is true but since we don't want to fetch the registry details of other microservices we make this as false
+    registerWithEureka: false #we don't want that the Eureka server will register with itself we are mentioning this properties as false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #in this url eurekaserver will expose
+

@@ -1,0 +1,39 @@
+server:
+  port: 8073
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:          #When this property is set to true, the gateway dynamically discovers and routes requests to services registered in the service registry. This means you don?t have to manually define routes for each service; the gateway will automatically create routes for all services registered with the DiscoveryClient
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true #lowerCaseServiceId property is used when the application is register on EUREKA server it's application.name property is in capital letter to make them small letter we define this property
+
+#below management property will show all the endpoints of the Actuator functionality
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint: # expose gateway related properties
+    gateway:
+      enabled: true
+
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Eazy Bank Gateway Server Application"
+    vesion: "1.0.0"
+
+logging:
+  level:
+    com:
+      eazybytes:
+        gatewayserver: DEBUG

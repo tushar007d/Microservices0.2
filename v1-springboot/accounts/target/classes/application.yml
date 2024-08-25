@@ -1,0 +1,63 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: "accounts"
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eazybytes
+    username: tushar
+    password: 19ft.1630@MYS
+  jpa:
+    show-sql: true
+    #database-platform: org.hibernate.dialect.H2Dialect
+    #hibernate:
+      #ddl-auto: update
+  sql:
+    init:
+      mode: always
+  profiles:
+    active:
+      - "qa"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+
+#below management property will show all the endpoints of the Actuator functionality
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true # to shutdown microservice gracefully(gracefully meaning is smoothly or in the style) we use this property
+
+endpoints:
+  shutdown:
+    enabled: true
+
+info:
+  app:
+    name: "accounts"
+    description: "Eazy Bank Accounts Application"
+    vesion: "1.0.0"
+
+eureka:
+  instance:
+    preferIpAddress: true #here we use localhost for DNS name but as we are using local system and we don't have any DNS system setup so we are using preferIpAddress
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com:
+      eazybytes:
+        accounts: DEBUG

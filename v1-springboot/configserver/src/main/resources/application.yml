@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    #active: git
+    active: native
+  cloud:
+    config:
+      server:
+        #git:
+          #uri: "https://github.com/tushar007d/eazybytes-config.git"
+          #default-label: main #if u have multiple branches default lable is useful
+          #timeout: 5 #config server will wait for only 5 sec otherwise it will fail
+          #clone-on-start: true #this will tell  to clone the github repo to loacl repo
+          #force-pull: true
+        native:
+          #in this approach we are storing the configuration files to the project classpath
+          #search-locations: "classpath:/config"
+          #in below approach we are declaring the all the configuration files to the any folder from the system
+          search-locations: "file:///D://JavaDirectory//Intellij//Microservices//v1-springboot//configserver//src//main//resources//config"
+server:
+  port: 8071
+
+encrypt:
+  key: "45DJE7W4HJ3487E4HDR873W4"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+

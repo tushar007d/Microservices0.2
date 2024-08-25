@@ -1,0 +1,28 @@
+
+W
+java:S1710?"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+W
+java:S1710["<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+W
+java:S1710u"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+X
+java:S1710˜"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+X
+java:S1710½"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+X
+java:S1710×"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+X
+java:S1710ğ"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ
+X
+java:S68135"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S68138"BRemove this field injection and use constructor injection instead.(êæÄŞ
+R
+java:S6353O"<Use concise character class syntax '\\d' instead of '[0-9]'.(÷‘„§
+W
+java:S6353j"<Use concise character class syntax '\\d' instead of '[0-9]'.(óªĞ£ÿÿÿÿÿ
+S
+java:S6353«"<Use concise character class syntax '\\d' instead of '[0-9]'.(÷‘„§
+W	java:S125Ğ"<This block of commented-out lines of code should be removed.(ª©Îëşÿÿÿÿ
+Q
+java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ
